@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace MoonplayerMovement
+{
+
+
 public class PlayerMovement : MonoBehaviour
 {
     // Player Rigidbody
@@ -96,4 +100,6 @@ public class PlayerMovement : MonoBehaviour
             isLanding = true;
         }
     }
+}
+
 }
