@@ -1,8 +1,14 @@
 fileFormatVersion: 2
-guid: 6ed60f9488f353c46a7e5f4eae87a580
+<<<<<<<< HEAD:Assets/cjScenes/Material/Materials/uploads_files_841294_concrete+tiles/Materials.meta
+guid: 25488fb969c73a546b82a5b37f21944c
 folderAsset: yes
 DefaultImporter:
+========
+guid: 29aaa22d6f674744d98e2d49a6a5a5fe
+NativeFormatImporter:
+>>>>>>>> main:Assets/csj/ExCamera.controller.meta
   externalObjects: {}
+  mainObjectFileID: 9100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

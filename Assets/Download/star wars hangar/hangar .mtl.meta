@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 24cfe50d49ab60e43a37169bb2ff2fa8
+<<<<<<<< HEAD:Assets/Download/star wars hangar/hangar .mtl.meta
+guid: 2a4d2023438d80449bf14b9eca7dbcde
+========
+guid: 9e9e5ad4ea60e6245ac13de4a7efd5f9
+>>>>>>>> main:Assets/csj/uploads_files_3744898_rocket+laucher+pad+.mtl.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
