@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/cjScenes/Material/Materials/uploads_files_841294_concrete+tiles.meta
+guid: 87e9764ebd90e614aaacbfe9322db6cc
+========
 guid: b76aa8cfd53e4914e95f354b9d9bb0a5
+>>>>>>>> main:Assets/csj/Scenes/Cockpit_Profiles.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
