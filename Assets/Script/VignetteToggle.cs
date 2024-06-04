@@ -10,6 +10,8 @@ public class VignetteToggle : MonoBehaviour
     private Vignette vignette;
     private bool isVignetteActive = false;
 
+    public GameObject fade;
+
     void Start()
     {
         // Vignette 효과를 프로파일에서 찾기
@@ -42,6 +44,7 @@ public class VignetteToggle : MonoBehaviour
         // 'E' 키 입력 체크
         if (Input.GetKeyDown(KeyCode.E))
         {
+            fade.GetComponent<Fade>().FadeStart();
             if (vignette != null)
             {
                 StartCoroutine(ToggleVignetteWithBlackout());
@@ -51,13 +54,7 @@ public class VignetteToggle : MonoBehaviour
 
     private IEnumerator ToggleVignetteWithBlackout()
     {
-        if (blackoutImage != null)
-        {
-            blackoutImage.gameObject.SetActive(true);
-            yield return new WaitForSeconds(1f);  // 1초 동안 대기
-            blackoutImage.gameObject.SetActive(false);
-        }
-
+        yield return new WaitForSeconds(0.5f);
         isVignetteActive = !isVignetteActive;  // 비네팅 활성/비활성 토글
         vignette.active = isVignetteActive;
     }
