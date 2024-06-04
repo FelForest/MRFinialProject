@@ -187,6 +187,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &109223893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7433172169374944123, guid: 7a5f5869dd86f12449434680edc51001, type: 3}
+  m_PrefabInstance: {fileID: 1379961348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &191000994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5187849607883452647, guid: 7a5f5869dd86f12449434680edc51001, type: 3}
+  m_PrefabInstance: {fileID: 1379961348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &251517904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8478427618107619609, guid: 7a5f5869dd86f12449434680edc51001, type: 3}
+  m_PrefabInstance: {fileID: 1379961348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &317563000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,8 +335,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707706fded1a94a42a55459fafcc0f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 1000
+  launchForce: 100
   continuousForce: 30
+  fuelTanks:
+  - {fileID: 1095928213}
+  - {fileID: 109223893}
+  - {fileID: 251517904}
+  - {fileID: 191000994}
+  - {fileID: 0}
+  detachForce: 10
+  detachTime: 5
 --- !u!54 &333424967
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -349,6 +372,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &333424968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a5f5869dd86f12449434680edc51001, type: 3}
+  m_PrefabInstance: {fileID: 1379961348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &436350535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1145,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -0.6, z: -0.15555891}
+  m_LocalPosition: {x: 0.05, y: -0.04, z: -0.15555891}
   m_LocalScale: {x: 1.6720171, y: 2.2682936, z: 2.2876325}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1138,7 +1166,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 963194228}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 1
@@ -1198,6 +1226,11 @@ MonoBehaviour:
   targetPosition: {fileID: 436350536}
   moveDuration: 0.7
   startYOffset: 0.5
+--- !u!1 &1095928213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -861757134545109613, guid: 7a5f5869dd86f12449434680edc51001, type: 3}
+  m_PrefabInstance: {fileID: 1379961348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1161512880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,9 +1679,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExternalRocket
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a5f5869dd86f12449434680edc51001, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a5f5869dd86f12449434680edc51001, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2013891677}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a5f5869dd86f12449434680edc51001, type: 3}
       insertIndex: -1
@@ -2423,12 +2463,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013891676}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.19302893, y: 0.47915843, z: 0.118743986, w: 0.8479664}
-  m_LocalPosition: {x: 34.160854, y: -4.24, z: 14.178707}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.22195208, y: -0.23212945, z: -0.045799185, w: 0.9459152}
+  m_LocalPosition: {x: 4.159621, y: -5.22, z: -5.4074383}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.49999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 333424968}
   m_LocalEulerAnglesHint: {x: -26.178, y: 58.695, z: 1.047}
 --- !u!114 &2013891678
 MonoBehaviour:
@@ -2514,7 +2554,6 @@ SceneRoots:
   - {fileID: 1819538682}
   - {fileID: 1385565041}
   - {fileID: 1379961348}
-  - {fileID: 2013891677}
   - {fileID: 1205846012}
   - {fileID: 1666099725}
   - {fileID: 41441040}
