@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 public class RocketLauncher : MonoBehaviour
 {
     public float launchForce = 1000f; // 발사 힘
@@ -10,9 +12,8 @@ public class RocketLauncher : MonoBehaviour
 
     public GameObject[] fuelTanks; // 여러 개의 연료 탱크를 관리하기 위해 배열 사용
     public float detachForce = 500f;
-
-
     public float detachTime = 5.0f;
+    public float nextSceneTime = 2.0f;
     void Start()
     {
         rocketRigidbody = GetComponent<Rigidbody>();
@@ -41,11 +42,10 @@ public class RocketLauncher : MonoBehaviour
         rocketRigidbody.useGravity = true; // 발사 직전에 중력 활성화
         rocketRigidbody.AddForce(Vector3.up * launchForce);
         Invoke("DetachTank",detachTime);
+        Invoke("NextScene",detachTime + nextSceneTime);
     }
 
-    void DetachTank()
-    {
-        // 모든 연료 탱크에 대해 반복 작업 수행
+    void DetachTank(){
         foreach (GameObject fuelTank in fuelTanks)
         {
             if (fuelTank != null)
@@ -65,5 +65,10 @@ public class RocketLauncher : MonoBehaviour
                 tankRigidbody.AddTorque(randomTorque, ForceMode.Impulse);
             }
         }
+    }
+
+    void NextScene()
+    {
+        SceneManager.LoadScene("Space");
     }
 }
