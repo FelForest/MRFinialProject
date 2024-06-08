@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 120168254}
   - component: {fileID: 120168253}
   - component: {fileID: 120168256}
+  - component: {fileID: 120168257}
   m_Layer: 0
   m_Name: SpaceCraft
   m_TagString: Untagged
@@ -780,6 +781,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &120168257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120168251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461aa40b22f180943a52e45691092669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: MoonScene
 --- !u!1 &123561328
 GameObject:
   m_ObjectHideFlags: 0
