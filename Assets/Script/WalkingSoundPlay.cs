@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAudioController : MonoBehaviour
+public class WalkingSoundPlay : MonoBehaviour
 {
     public AudioSource walkingAudioSource; // 걷는 소리 오디오 소스
 
