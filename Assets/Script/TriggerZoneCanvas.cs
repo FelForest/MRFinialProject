@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
 
-public class TriggerZone : MonoBehaviour
+public class TriggerZoneCanvas : MonoBehaviour
 {
     public GameObject canvas;
     public Text messageText;

@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/cjScenes/Earth.unity
+    guid: 034fd228299fc9a4f8f36d9308811e62
+  - enabled: 1
     path: Assets/csj/Scenes/Cockpit.unity
     guid: 34cfc74012060aa4291d75a1cd71b760
+  - enabled: 1
+    path: Assets/cjScenes/Space.unity
+    guid: 0a39a2fb6e40cd04a9ae6d55986513c8
+  - enabled: 1
+    path: Assets/cjScenes/Landing.unity
+    guid: c08509d4f67debe408cd58e9cc7d3f81
+  - enabled: 1
+    path: Assets/Fel/Scenes/MoonScene.unity
+    guid: f949ad61606b80447843393f4f75ecd6
   - enabled: 1
     path: Assets/csj/Scenes/LaunchScene.unity
     guid: 8546b721c044f584c824d671ad3cc4e4
   - enabled: 1
     path: Assets/csj/Scenes/RocketMove.unity
-    guid: 20b6f949c54c61e4eaa8e24bdbbea435
-  - enabled: 1
-    path: Assets/cjScenes/Earth.unity
-    guid: 034fd228299fc9a4f8f36d9308811e62
-  - enabled: 1
-    path: Assets/cjScenes/Landing.unity
-    guid: c08509d4f67debe408cd58e9cc7d3f81
-  - enabled: 1
-    path: Assets/cjScenes/Space.unity
-    guid: 0a39a2fb6e40cd04a9ae6d55986513c8
-  - enabled: 1
-    path: Assets/Fel/Scenes/MoonScene.unity
-    guid: f949ad61606b80447843393f4f75ecd6
+    guid: d8e116ec9c63e0f4bbd55a9397507b6b
   m_configObjects: {}
