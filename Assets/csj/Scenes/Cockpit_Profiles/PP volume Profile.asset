@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
   m_Name: PP volume Profile
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   settings:
   - {fileID: 2062436340218715419}
 --- !u!114 &2062436340218715419
@@ -59,6 +58,3 @@ MonoBehaviour:
   opacity:
     overrideState: 0
     value: 1
-=======
-  settings: []
->>>>>>> parent of 5c51abd (Merge branch 'main' into cjoon)
