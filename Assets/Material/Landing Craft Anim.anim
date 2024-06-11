@@ -280,10 +280,10 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 5
+  - time: 4.983333
     functionName: LoadScene
-    data: 
-    objectReferenceParameter: {fileID: 0}
+    data: MoonScene
+    objectReferenceParameter: {fileID: 11500000, guid: 461aa40b22f180943a52e45691092669, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
