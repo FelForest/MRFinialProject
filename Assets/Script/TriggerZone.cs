@@ -29,9 +29,9 @@ public class TriggerZone : MonoBehaviour
 
     void Update()
     {
-        if (playerInZone && Input.GetKeyDown(KeyCode.E))
+        if (playerInZone && Input.GetKeyDown(KeyCode.Q))
         {
-            // E키를 누르면 Canvas와 Text를 비활성화
+            // Q키를 누르면 Canvas와 Text를 비활성화
             canvas.SetActive(false);
             messageText.gameObject.SetActive(false);
             playerInZone = false;

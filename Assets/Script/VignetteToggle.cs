@@ -9,6 +9,8 @@ public class VignetteToggle : MonoBehaviour
     public Image blackoutImage;  // 블랙아웃 이미지를 연결할 변수
     private Vignette vignette;
     private bool isVignetteActive = false;
+    public  GameObject Fade; 
+    private bool isWear;
 
     void Start()
     {
@@ -42,9 +44,10 @@ public class VignetteToggle : MonoBehaviour
         // 'E' 키 입력 체크
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (vignette != null)
-            {
-                StartCoroutine(ToggleVignetteWithBlackout());
+            if(isWear==false){
+                Fade.GetComponent<Fade>().FadeStart();
+                isWear = true;
+                vignette.active = isWear;
             }
         }
     }
