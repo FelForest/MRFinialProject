@@ -10,6 +10,8 @@ public class TriggerZoneCanvas : MonoBehaviour
 
     private bool playerInZone = false;
 
+    public GameObject objectToDestroy;
+
     void Start()
     {
         canvas.SetActive(false);
@@ -35,6 +37,8 @@ public class TriggerZoneCanvas : MonoBehaviour
             canvas.SetActive(false);
             messageText.gameObject.SetActive(false);
             playerInZone = false;
+
+            Destroy(objectToDestroy);
         }
     }
 }

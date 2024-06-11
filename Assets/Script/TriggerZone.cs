@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 
 public class TriggerZone : MonoBehaviour
 {
@@ -9,6 +11,11 @@ public class TriggerZone : MonoBehaviour
     public Text messageText;
 
     private bool playerInZone = false;
+
+    public string sceneName = "Cockpit"; 
+    public float delay = 1.0f; // 딜레이 시간 (초 단위)
+
+    public  GameObject Fade; 
 
     void Start()
     {
@@ -29,13 +36,23 @@ public class TriggerZone : MonoBehaviour
 
     void Update()
     {
-        if (playerInZone && Input.GetKeyDown(KeyCode.E))
+        if (playerInZone && Input.GetKeyDown(KeyCode.Q))
         {
-            // E키를 누르면 Canvas와 Text를 비활성화
+            // Q키를 누르면 Canvas와 Text를 비활성화
             canvas.SetActive(false);
             messageText.gameObject.SetActive(false);
             playerInZone = false;
+
+            StartCoroutine(LoadSceneAfterDelay());
+
+            Fade.GetComponent<Fade>().FadeStart(); 
         }
+    }
+
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
     }
 }
 

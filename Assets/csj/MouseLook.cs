@@ -9,20 +9,22 @@ public class MouseLook : MonoBehaviour
 
     void Start()
     {
-         Cursor.visible = true;
-         Cursor.lockState = CursorLockMode.None;
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
+        
+        // 위아래 각도 제한
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -45f, 10f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+        
+        // 필요에 따라 수평 회전 활성화
+        // float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        // playerBody.Rotate(Vector3.up * mouseX);
     }
 }
