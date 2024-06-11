@@ -20,7 +20,7 @@ public class Fade : MonoBehaviour
         Normal
     }
 
-    private void Start()
+    private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
     }
