@@ -1,15 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
 using System.Collections;
 
 public class VignetteToggle : MonoBehaviour
 {
     public PostProcessVolume volume;
-    public Image blackoutImage;  // 블랙아웃 이미지를 연결할 변수
     private Vignette vignette;
     private bool isVignetteActive = false;
-    public  GameObject Fade; 
+    public GameObject Fade;
     private bool isWear;
 
     void Start()
@@ -32,11 +30,6 @@ public class VignetteToggle : MonoBehaviour
         {
             Debug.LogError("PostProcessVolume 또는 프로파일이 할당되지 않았습니다!");
         }
-
-        if (blackoutImage != null)
-        {
-            blackoutImage.gameObject.SetActive(false);  // 초기에는 블랙아웃 이미지 비활성화
-        }
     }
 
     void Update()
@@ -44,24 +37,21 @@ public class VignetteToggle : MonoBehaviour
         // 'E' 키 입력 체크
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(isWear==false){
+            if (isWear == false)
+            {
                 Fade.GetComponent<Fade>().FadeStart();
                 isWear = true;
-                vignette.active = isWear;
+                vignette.active = true;
             }
         }
     }
 
     private IEnumerator ToggleVignetteWithBlackout()
     {
-        if (blackoutImage != null)
-        {
-            blackoutImage.gameObject.SetActive(true);
-            yield return new WaitForSeconds(1f);  // 1초 동안 대기
-            blackoutImage.gameObject.SetActive(false);
-        }
-
+        // blackout 이미지 부분 삭제
         isVignetteActive = !isVignetteActive;  // 비네팅 활성/비활성 토글
         vignette.active = isVignetteActive;
+
+        yield return null;
     }
 }
