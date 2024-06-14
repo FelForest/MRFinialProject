@@ -11,10 +11,4 @@ public class OpenScene : MonoBehaviour
         fade.GetComponent<Fade>().FadeStart();
         Destroy(gameObject, fade.GetComponent<Fade>().fadeTime);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
