@@ -5,16 +5,19 @@ using UnityEngine;
 public class RaisingFlag : MonoBehaviour
 {
     bool isRaised = false;
+    bool isPressed = false;
+    bool isTrigger = false;
     public Animator animator;
-
+    public GameObject Text;
     public GameObject nextObject;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (!isRaised)
+            if (!isPressed)
             {
-                animator.enabled = true;
+                isTrigger = true;
+                Text.SetActive(true);
             }
         }
     }
@@ -26,6 +29,12 @@ public class RaisingFlag : MonoBehaviour
 
     void Update() 
     {
+        if(isTrigger && Input.GetKeyDown(KeyCode.E))
+        {
+            isPressed = true;
+            Text.SetActive(false);
+            animator.enabled = true;
+        }
         if(isRaised)
         {
             nextObject.SetActive(true);
