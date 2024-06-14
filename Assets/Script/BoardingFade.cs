@@ -7,7 +7,7 @@ public class BoardingFade : MonoBehaviour
 {
     public  GameObject Fade; 
     
-
+    
     void Update()
     {
         // 'Q' 키 입력 체크
