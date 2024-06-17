@@ -7,6 +7,8 @@ public class PlayerAudioController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 previousPosition;
 
+    public Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,19 +23,31 @@ public class PlayerAudioController : MonoBehaviour
             Debug.LogError("Walking AudioSource를 설정하지 않았습니다.");
         }
 
-        previousPosition = transform.position;
+        if (animator == null)
+        {
+            Debug.LogError("Animator를 설정하지 않았습니다. ");
+        }
+
+        //previousPosition = transform.position;
     }
 
     void Update()
     {
-        // 좌우 및 앞뒤 이동을 감지
+
+        /*// 좌우 및 앞뒤 이동을 감지
         float horizontalMovement = Mathf.Abs(transform.position.x - previousPosition.x);
         float verticalMovement = Mathf.Abs(transform.position.z - previousPosition.z);
 
-        if (horizontalMovement > 0.01f || verticalMovement > 0.01f) // 일정 값 이상 움직임이 있을 때만 재생
+        //Debug.Log(horizontalMovement);
+        //Debug.Log(verticalMovement);
+        bool isMoving = (horizontalMovement > 0.01f || verticalMovement > 0.01f);
+
+        Debug.Log(isMoving);
+        if (isMoving)
         {
             if (!walkingAudioSource.isPlaying)
             {
+                Debug.Log("움직임 감지 - 오디오 재생");
                 walkingAudioSource.Play(); // 플레이어가 움직이면 오디오 재생
             }
         }
@@ -41,11 +55,32 @@ public class PlayerAudioController : MonoBehaviour
         {
             if (walkingAudioSource.isPlaying)
             {
-                walkingAudioSource.Stop(); // 플레이어가 멈추면 오디오 중지
+                Debug.Log("멈춤 감지 - 오디오 일시 중지");
+                walkingAudioSource.Pause(); // 플레이어가 멈추면 오디오 일시 중지
             }
         }
 
         // 이전 위치 갱신
-        previousPosition = transform.position;
+        previousPosition = transform.position;*/
+
+        bool isMoving = animator.GetBool("isMoving");
+
+        if (isMoving)
+        {
+            if (!walkingAudioSource.isPlaying)
+            {
+                Debug.Log("움직임 감지 - 오디오 재생");
+                walkingAudioSource.Play();
+            }
+        }
+        else
+        {
+            if (walkingAudioSource.isPlaying)
+            {
+                Debug.Log("멈춤 감지 - 오디오 일시 중지");
+                walkingAudioSource.Pause();
+            }
+        }
+
     }
 }

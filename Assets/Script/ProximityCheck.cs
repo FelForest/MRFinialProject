@@ -22,7 +22,7 @@ public class ProximityCheck : MonoBehaviour
     private void OnButtonClick()
     {
         Debug.Log("Button clicked, loading new scene...");
-        SceneManager.LoadScene("Landing"); // 변경하려는 Scene 이름으로 교체
+        //SceneManager.LoadScene("Landing"); // 변경하려는 Scene 이름으로 교체
     }
 
     private void OnTriggerEnter(Collider other)

@@ -9,6 +9,7 @@ public class TriggerZoneCanvas : MonoBehaviour
     public Text messageText;
 
     private bool playerInZone = false;
+    private bool isWear = false;
 
     public GameObject objectToDestroy;
 
@@ -20,7 +21,7 @@ public class TriggerZoneCanvas : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isWear)
         {
             // 플레이어가 특정 위치에 도착하면 Canvas와 Text를 활성화
             canvas.SetActive(true);
@@ -37,7 +38,7 @@ public class TriggerZoneCanvas : MonoBehaviour
             canvas.SetActive(false);
             messageText.gameObject.SetActive(false);
             playerInZone = false;
-
+            isWear = true;
             Destroy(objectToDestroy);
         }
     }

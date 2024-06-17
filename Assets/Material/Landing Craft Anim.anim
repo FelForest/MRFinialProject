@@ -484,7 +484,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 8.5
-    functionName: LoadScene
+    functionName: NextScene
     data: MoonScene
     objectReferenceParameter: {fileID: 11500000, guid: 461aa40b22f180943a52e45691092669, type: 3}
     floatParameter: 0
